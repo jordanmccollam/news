@@ -1,0 +1,17 @@
+body {
+    background: #93c7d5;
+    font-family: 'Calistoga', cursive;
+    font-size: 20px;
+}
+
+.navbar {
+    position: relative;
+    background: #ebe3c5;
+}
+
+#logo {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    left: 20px;
+}
