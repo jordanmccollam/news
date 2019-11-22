@@ -20,3 +20,11 @@ body {
 .btn-custom-red {
     background: #e44f50;
 }
+
+.divider {
+    border-bottom: solid #333333 2px;
+}
+
+#noArticlesMessage {
+    background:#fdc842;
+}
