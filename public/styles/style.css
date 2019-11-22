@@ -7,6 +7,7 @@ body {
 .navbar {
     position: relative;
     background: #ebe3c5;
+    padding-left: 200px;
 }
 
 #logo {
@@ -14,4 +15,8 @@ body {
     top: 0px;
     z-index: 2;
     left: 20px;
+}
+
+.btn-custom-red {
+    background: #e44f50;
 }
