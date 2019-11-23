@@ -10,6 +10,12 @@ mongoose.connect(MONGODB_URI);
 module.exports = function(app) {
 
     app.get("/scrape", function(req, res) {
+
+        // Empty current articles in database
+        db.Article.remove().then(function() {
+            console.log("Articles emptied, ready for scrape.");
+        });
+
         var url = "https://www.nytimes.com"
 
         axios.get(url).then(function(response) {
@@ -31,8 +37,6 @@ module.exports = function(app) {
                         console.log(err);
                     });
             });
-
-            // res.redirect("/");
             res.redirect("/");
         })
 
