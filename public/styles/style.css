@@ -31,3 +31,12 @@ body {
 #message {
     background:#fdc842;
 }
+
+.article {
+    background: #ebe3c5;
+}
+
+.summary {
+    font-size: 16px;
+    color: #333333;
+}

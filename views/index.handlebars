@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-12 text-center">
             <h1 class="display-4">Mongo Scraper</h1>
-            <p class="font-italic">Google News Edition</p>
+            <p class="font-italic">New York Times Edition</p>
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6">
@@ -47,16 +47,21 @@
     {{!-- Articles --}}
     <div class="row mt-5">
         <div class="col-12">
-            {{#if found}}
-            <div id="message" class="py-4">Articles</div>
+            {{#if article}}
+            <div id="message" class="py-4 text-center rounded-pill">Articles</div>
             <div class="articles">
-                {{#each found}}
                 <div class="row">
-                    <div class="col-12 col-lg-6">
-                        {{found.headline}}
+                {{#each article}}
+                    <div class="col-12 col-lg-6 my-3">
+                        <div class="article rounded text-center py-3">
+                            {{headline}}
+                            <div class="divider mb-3 mt-1"></div>
+                            <p class="summary">{{summary}}</p>
+                            <a href="{{url}}" target="blank">Link to Article</a>
+                        </div>
                     </div>
-                </div>
                 {{/each}}
+                </div>
             </div>
             {{else}}
             <div id="noArticlesMessage" class="text-center rounded-pill">

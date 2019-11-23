@@ -9,7 +9,10 @@ module.exports = function(app) {
             if (err) {
                 console.log(err);
             } else {
-                res.render("index", found);
+                var data = {
+                    article: found
+                }
+                res.render("index", data);
             }
         })
     })
