@@ -47,9 +47,22 @@
     {{!-- Articles --}}
     <div class="row mt-5">
         <div class="col-12">
+            {{#if found}}
+            <div id="message" class="py-4">Articles</div>
+            <div class="articles">
+                {{#each found}}
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        {{found.headline}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
             <div id="noArticlesMessage" class="text-center rounded-pill">
                 <p class="py-4">Uh Oh. Looks like we don't have any new articles yet.</p>
             </div>
+            {{/if}}
         </div>
     </div>
 </div>
