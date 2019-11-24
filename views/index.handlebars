@@ -51,16 +51,17 @@
             <div id="message" class="py-4 text-center rounded-pill">Articles</div>
             <div class="articles">
                 <div class="row">
-                {{#each article}}
+                    {{#each article}}
                     <div class="col-12 col-lg-6 my-3">
                         <div class="article rounded-lg text-center py-3">
-                            {{headline}} <button class="btn btn-sm text-custom-yellow note" id="{{_id}}"><i class="fas fa-sticky-note fa-2x"></i></button>
+                            {{headline}} <button class="btn btn-sm text-custom-yellow note" id="{{_id}}"><i
+                                    class="fas fa-sticky-note fa-2x"></i></button>
                             <div class="divider mb-3 mt-1"></div>
                             <p class="summary">{{summary}}</p>
                             <a href="{{url}}" target="blank">Link to Article</a>
                         </div>
                     </div>
-                {{/each}}
+                    {{/each}}
                 </div>
             </div>
             {{else}}
@@ -71,3 +72,31 @@
         </div>
     </div>
 </div>
+
+{{!-- Note Modal --}}
+{{#each article}}
+<div class="modal noteModal" tabindex="-1" role="dialog" id="noteModal-{{_id}}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{headline}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/" method="post">
+                    <div class="form-group">
+                        <label for="noteBody">Note:</label>
+                        <textarea class="form-control" name="noteBody" rows="5" value="{{note.body}}"></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-custom-red">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
