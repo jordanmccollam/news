@@ -40,3 +40,10 @@ body {
     font-size: 16px;
     color: #333333;
 }
+
+.text-custom-yellow {
+    color: #fdc842;
+}
+.text-custom-yellow:hover {
+    color: #e44f50;
+}
