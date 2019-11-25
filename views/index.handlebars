@@ -17,9 +17,6 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/saved">Saved Articles</a>
-                </li>
-                <li class="nav-item">
                     <button class="btn btn-sm btn-custom-red"><a class="nav-link" href="/scrape">Scrape New
                             Articles!</a></button>
                 </li>
@@ -85,9 +82,17 @@
                 </button>
             </div>
             <div class="modal-body">
+                <p class="text-secondary info text-italic">Press the red X next to any note to delete it.</p>
                 <form action="/article/{{_id}}" method="post">
                     <div class="form-group">
-                        <label for="body">Note:</label>
+                        <div class="row">
+                            <div class="col-10">
+                                <label for="body">Note:</label>
+                            </div>
+                            <div class="col-2 text-right">
+                                <button class="btn btn-outline-danger btn-sm delete"> X</button>
+                            </div>
+                        </div>
                         <textarea class="form-control" name="body" rows="5"></textarea>
                     </div>
             </div>

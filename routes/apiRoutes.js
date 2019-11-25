@@ -12,9 +12,9 @@ module.exports = function (app) {
     app.get("/scrape", function (req, res) {
 
         // Empty current articles in database
-        // db.Article.remove().then(function() {
-        //     console.log("Articles emptied, ready for scrape.");
-        // });
+        db.Article.remove().then(function() {
+            console.log("Articles emptied, ready for scrape.");
+        });
 
         var url = "https://www.nytimes.com"
 
@@ -71,4 +71,16 @@ module.exports = function (app) {
             })
     });
 
+    app.get("/delete/:id", function(req, res) {
+        db.Article.findOne({_id: req.params.id})
+            .then(function(dbArticle) {
+                db.Note.deleteMany({_id: dbArticle.note}).then(function(dbNote) {
+                    console.log("Note Deleted!");
+                }).catch(function(err) {
+                    console.log(err);
+                })
+            }).catch(function(err) {
+                console.log(err);
+            })
+    });
 }

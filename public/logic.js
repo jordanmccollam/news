@@ -10,6 +10,13 @@ $(document).ready(function () {
             }
             $("#noteModal-" + id).modal("show");
         });
+
+        var deleteBtn = $("#noteModal-" + id).find("button.delete");
+        $(deleteBtn).on("click", function() {
+            event.preventDefault();
+            $.get("/delete/" + id);
+            window.location.reload();
+        });
     });
 
     // End of jQuery
