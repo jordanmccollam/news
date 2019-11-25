@@ -85,10 +85,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/" method="post">
+                <form action="/article/{{_id}}" method="post">
                     <div class="form-group">
-                        <label for="noteBody">Note:</label>
-                        <textarea class="form-control" name="noteBody" rows="5" value="{{note.body}}"></textarea>
+                        <label for="body">Note:</label>
+                        <textarea class="form-control" name="body" rows="5"></textarea>
                     </div>
             </div>
             <div class="modal-footer">
