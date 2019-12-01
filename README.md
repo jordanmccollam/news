@@ -21,6 +21,7 @@ The purpose of this app is to demonstrate skills in web scraping and MongoDB. Th
 - Handlebars
 - JavaScript + jQuery
 - Bootstrap + CSS
+- Node.js
 
 ---
 
