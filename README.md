@@ -13,7 +13,7 @@ The purpose of this app is to demonstrate skills in web scraping and MongoDB. Th
 
 ---
 
-### Technoligies
+### Technologies
 - MongoDB
 - Mongoose
 - Cheerio
